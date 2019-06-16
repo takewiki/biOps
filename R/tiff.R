@@ -37,7 +37,7 @@
 #		An imagedata.
 #
 readTiff <- function(filename){
-	if(!FALSE)
+	if(!TRUE)
 		stop("Sorry, libtiff not available")
 	res <- .C("read_tiff_img_info", as.character(filename),
 	          width=integer(1), height=integer(1), depth=integer(1),
@@ -61,7 +61,7 @@ readTiff <- function(filename){
 #		imgdata - The image data
 #
 writeTiff <- function(filename, imgdata){
-	if(!FALSE)
+	if(!TRUE)
 		stop("Sorry, libtiff not available")
 	imgmatrix <- array(imgdata)
 	depth <- if (attr(imgdata, "type") == "grey") 1 else dim(imgdata)[3]
